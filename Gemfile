@@ -10,6 +10,7 @@ gem 'tilt', '~> 1.4.1'
 gem 'rest-client'
 gem 'sequel'
 gem 'sqlite3', group: :development
+gem 'pg', group: :development
 gem 'cowsay'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
