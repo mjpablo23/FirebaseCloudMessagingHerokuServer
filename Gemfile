@@ -5,7 +5,9 @@ ruby '2.3.3'
 
 gem 'sinatra'
 # sinatra needs old tilt version: http://stackoverflow.com/questions/20648394/moduletemplates-uninitialized-constant-tiltcompilesite-nameerror-using
+#https://groups.google.com/forum/#!topic/sinatrarb/mAtn7AZBVmY
 gem 'tilt', '~> 1.4.1'
+gem 'rest-client'
 gem 'cowsay'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
