@@ -4,4 +4,4 @@
 require ::File.expand_path('../config/environment',  __FILE__)
 # require './firebasepushserver.rb'
 run Rails.application
-# run Sinatra::Application
+run Sinatra::Application
