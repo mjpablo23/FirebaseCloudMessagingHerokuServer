@@ -6,7 +6,7 @@ ruby '2.3.3'
 gem 'sinatra'
 # sinatra needs old tilt version: http://stackoverflow.com/questions/20648394/moduletemplates-uninitialized-constant-tiltcompilesite-nameerror-using
 #https://groups.google.com/forum/#!topic/sinatrarb/mAtn7AZBVmY
-gem 'tilt', '~> 1.4.1'
+gem 'tilt', '~> 1.4.1', group: :production
 gem 'rest-client'
 gem 'sequel'
 gem 'sqlite3', group: :development
