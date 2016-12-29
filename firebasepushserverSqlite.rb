@@ -2,8 +2,7 @@
 
 require 'sinatra'
 require 'rest-client'
-#require 'sequel'
-require 'pg'
+require 'sequel'
 require 'json/ext'
 
 # to run:  ruby app.rb -s Puma
@@ -25,8 +24,7 @@ get '/' do
 end
 
 # Create a SQLite3 database
-# DB = Sequel.connect('sqlite://gcm-test.db')
-DB = PG.connect(dbname: 'postgres')   # paul -- need to create PG database for heroku
+DB = Sequel.connect('sqlite://gcm-test.db')
 
 # Create a Device table if it doesn't exist
 DB.create_table? :Device do
