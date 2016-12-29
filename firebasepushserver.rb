@@ -28,8 +28,8 @@ end
 # DB = Sequel.connect('sqlite://gcm-test.db')
 
 # http://stackoverflow.com/questions/13319877/ruby-best-approach-to-create-a-postgresql-db
-# DB = PG.connect(dbname: 'ruby-getting-started_production')   # paul -- need to create PG database for heroku
-DB = PG.connect(dbname: 'pg-dummy')   # paul -- need to create PG database for heroku
+DB = PG.connect(dbname: 'ruby-getting-started_production')   # paul -- need to create PG database for heroku
+# DB = PG.connect(dbname: 'pg-dummy')   # paul -- need to create PG database for heroku
 
 # Create a Device table if it doesn't exist
 DB.create_table? :Device do
