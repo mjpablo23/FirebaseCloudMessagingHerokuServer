@@ -2,13 +2,16 @@
 
 require 'sinatra'
 require 'rest-client'
-#require 'sequel'
+require 'sequel'
 require 'pg'
 require 'json/ext'
 
 # check the ssh connection
 
-# to run:  ruby app.rb -s Puma
+# to run on mac:  ruby app.rb -s Puma
+# to run locally on heroku: 
+# heroku run bash -a favorsrubytest2
+# ~ $ bundle exec ruby firebasepushserver.rb -s puma
 
 # if app.rb doesn't run: 
 # In my case I start to see this errors after installing rvm
@@ -19,6 +22,8 @@ require 'json/ext'
 
 # ruby version error: http://stackoverflow.com/questions/17415424/why-is-rails-using-the-wrong-version-of-ruby
 # if rails sees wrong version of ruby, use command:  rvm --default use 2.3.3
+
+# write script to commit to git and run git push heroku master
 
 AUTHORIZE_KEY = "AAAAGrYxdas:APA91bF3-b0qxflb9rkEkkTahh9oqS3F2lA2CUVlDRbcGYaQIjaSVAAy1wpSdZyxJCy7zlCRURBLf_LBdbjwrnqz7bOz12fy9lC7sXAhYSwHSWSwEiTpDhzx6UET2hYxL9kh3IYlVi6JULuNY_Xv2tucsf4CPAFUEQ"
 
@@ -32,7 +37,8 @@ end
 # http://stackoverflow.com/questions/13319877/ruby-best-approach-to-create-a-postgresql-db
 # DB = PG.connect(dbname: 'ruby-getting-started_production')   # paul -- need to create PG database for heroku
 # DB = PG.connect(dbname: 'pg-dummy')   # paul -- need to create PG database for heroku
-DB = PG.connect(ENV['DATABASE_URL'])
+# DB = PG.connect(ENV['DATABASE_URL'])
+DB = Sequel.connect(ENV['DATABASE_URL'])
 
 # postgres table
 DB.exec "DROP TABLE IF EXISTS Device"
