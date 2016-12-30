@@ -41,16 +41,17 @@ end
 DB = Sequel.connect(ENV['DATABASE_URL'])
 
 # postgres table
-DB.exec "DROP TABLE IF EXISTS Device"
-DB.exec "CREATE TABLE Device(reg_id INTEGER PRIMARY KEY, user_id text, reg_token text, os text DEFAULT 'android')"
+#DB.exec "DROP TABLE IF EXISTS Device"
+#DB.exec "CREATE TABLE Device(reg_id INTEGER PRIMARY KEY, user_id text, reg_token text, os text DEFAULT 'android')"
+
 # Create a Device table if it doesn't exist
 # old sqlite code
-#DB.create_table? :Device do
-#  primary_key :reg_id
-#  String :user_id
-#  String :reg_token
-#  String :os, :default => 'android'
-#end
+DB.create_table? :Device do
+  primary_key :reg_id
+  String :user_id
+  String :reg_token
+  String :os, :default => 'android'
+end
 
 Device = DB[:Device]  # create the dataset
 
