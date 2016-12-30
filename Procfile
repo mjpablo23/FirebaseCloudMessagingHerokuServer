@@ -1,1 +1,1 @@
-web: bundle exec puma -C config/puma.rb
+web: bundle exec ruby firebasepushserver.rb -s puma -p $PORT
