@@ -35,6 +35,7 @@ end
 DB = PG.connect(ENV['DATABASE_URL'])
 
 # postgres table
+DB.exec "DROP TABLE IF EXISTS Device"
 DB.exec "CREATE TABLE Device(reg_id INTEGER PRIMARY KEY, user_id text, reg_token text, os text DEFAULT 'android')"
 # Create a Device table if it doesn't exist
 # old sqlite code
