@@ -25,7 +25,7 @@ require 'json/ext'
 
 # write script to commit to git and run git push heroku master
 
-AUTHORIZE_KEY = "AAAAGrYxdas:APA91bF3-b0qxflb9rkEkkTahh9oqS3F2lA2CUVlDRbcGYaQIjaSVAAy1wpSdZyxJCy7zlCRURBLf_LBdbjwrnqz7bOz12fy9lC7sXAhYSwHSWSwEiTpDhzx6UET2hYxL9kh3IYlVi6JULuNY_Xv2tucsf4CPAFUEQ"
+AUTHORIZE_KEY = "YOUR-FIREBASE-SERVER-KEY"
 
 get '/' do
   "Hello World!"
