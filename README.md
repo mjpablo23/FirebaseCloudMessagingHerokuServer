@@ -4,6 +4,8 @@ The main file is firebasepushserver.rb.
 
 It is based on a file from codepath guides for FCM:  https://guides.codepath.com/android/Google-Cloud-Messaging#step-3-setup-web-server
 
+The above guide is a good way to get started and get a FCM server running locally on your machine.  After that, I had to figure it out on my own.  Getting it deployed to Heroku and working took me about 3 days.  
+
 The main difference from the sample code in the guide is that this version uses Postgres for its database.  
 
 Main changes I had to make after cloning the ruby-getting-started git repository from Heroku:
