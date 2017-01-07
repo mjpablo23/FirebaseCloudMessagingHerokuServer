@@ -37,6 +37,7 @@ Main changes I had to make after cloning the ruby-getting-started git repository
 
 11) Change the remote git url's:  https://help.github.com/articles/changing-a-remote-s-url/
 
+12) HttpClientWrapperForFCM.java is the file for calling it from android
 
 ------------------------------------------------------------------------------------------------------------------
 # ruby-getting-started
