@@ -1,5 +1,3 @@
-# this is https://favorsrubytest2.herokuapp.com/
-
 require 'sinatra'
 require 'rest-client'
 require 'sequel'
@@ -10,7 +8,7 @@ require 'json/ext'
 
 # to run on mac:  ruby app.rb -s Puma
 # to run locally on heroku: 
-# heroku run bash -a favorsrubytest2
+# heroku run bash -a APPNAME
 # ~ $ bundle exec ruby firebasepushserver.rb -s puma
 
 # if app.rb doesn't run: 
@@ -35,9 +33,6 @@ end
 # DB = Sequel.connect('sqlite://gcm-test.db')
 
 # http://stackoverflow.com/questions/13319877/ruby-best-approach-to-create-a-postgresql-db
-# DB = PG.connect(dbname: 'ruby-getting-started_production')   # paul -- need to create PG database for heroku
-# DB = PG.connect(dbname: 'pg-dummy')   # paul -- need to create PG database for heroku
-# DB = PG.connect(ENV['DATABASE_URL'])
 DB = Sequel.connect(ENV['DATABASE_URL'])
 
 # postgres table
@@ -89,6 +84,8 @@ def send_gcm_message(title, body, reg_tokens)
 # http://stackoverflow.com/questions/38154263/what-should-i-specify-for-authorization-key-in-firebase-cloud-messaging
 # the "Authorization" should be the "Server Key" found on the Firebase console under my project's Cloud Messaging tab.
   # Send the request with JSON args and headers
-  RestClient.post 'https://gcm-http.googleapis.com/gcm/send', post_args.to_json,
+  # 2-9-17:  update from gcm to fcm:  https://developers.google.com/cloud-messaging/ios/ios-migrate-fcm#update_server_endpoints
+  # RestClient.post 'https://gcm-http.googleapis.com/gcm/send', post_args.to_json,
+    RestClient.post 'https://fcm.googleapis.com/fcm/send', post_args.to_json,
     :Authorization => 'key=' + AUTHORIZE_KEY, :content_type => :json, :accept => :json
 end
